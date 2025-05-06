@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
 const Courses = () => {
   const courses = [
     {
+      id: "intro-ml",
       title: "Introduction to Machine Learning",
       description: "Learn the fundamentals of machine learning algorithms and implementations",
       level: "Beginner",
@@ -15,6 +17,7 @@ const Courses = () => {
       image: "bg-gradient-to-r from-ai-blue/20 to-ai-teal/20"
     },
     {
+      id: "deep-learning",
       title: "Deep Learning Specialization",
       description: "Master neural networks and deep learning techniques with practical applications",
       level: "Intermediate",
@@ -24,6 +27,7 @@ const Courses = () => {
       image: "bg-gradient-to-r from-ai-purple/20 to-ai-blue/20"
     },
     {
+      id: "nlp",
       title: "Natural Language Processing",
       description: "Build NLP systems and language models with cutting-edge techniques",
       level: "Advanced",
@@ -81,18 +85,22 @@ const Courses = () => {
                     <span className="text-xs text-ai-dark-gray">{course.students} students</span>
                   </div>
                 </div>
-                <Button className="w-full bg-ai-blue hover:bg-ai-blue/90 text-white">
-                  View Course
-                </Button>
+                <Link to={`/courses/${course.id}`}>
+                  <Button className="w-full bg-ai-blue hover:bg-ai-blue/90 text-white">
+                    View Course
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <Button variant="outline" className="border-ai-blue text-ai-blue hover:bg-ai-blue/10">
-            View All Courses
-          </Button>
+          <Link to="/courses">
+            <Button variant="outline" className="border-ai-blue text-ai-blue hover:bg-ai-blue/10">
+              View All Courses
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

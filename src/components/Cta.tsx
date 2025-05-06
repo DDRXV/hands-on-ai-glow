@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Cta = () => {
@@ -14,12 +15,16 @@ const Cta = () => {
             Join thousands of students who are building practical AI skills and advancing their careers with AIGlow.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-white text-ai-blue hover:bg-white/90 rounded-lg px-8 py-6">
-              Explore Courses
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-lg px-8 py-6">
-              Request Information
-            </Button>
+            <Link to="/courses">
+              <Button size="lg" className="bg-white text-ai-blue hover:bg-white/90 rounded-lg">
+                Explore Courses
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-lg">
+                Request Information
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

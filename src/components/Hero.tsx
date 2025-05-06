@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -16,12 +17,16 @@ const Hero = () => {
               Build practical AI skills with expert-led courses and real-world projects. Go from beginner to AI professional with our immersive learning approach.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-ai-blue hover:bg-ai-blue/90 text-white rounded-lg px-8 py-6">
-                Explore Courses
-              </Button>
-              <Button size="lg" variant="outline" className="border-ai-blue text-ai-blue hover:bg-ai-blue/10 rounded-lg px-8 py-6">
-                View Free Resources <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link to="/courses">
+                <Button size="lg" className="bg-ai-blue hover:bg-ai-blue/90 text-white rounded-lg">
+                  Explore Courses
+                </Button>
+              </Link>
+              <Link to="/courses">
+                <Button size="lg" variant="outline" className="border-ai-blue text-ai-blue hover:bg-ai-blue/10 rounded-lg">
+                  View Free Resources <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
             <div className="mt-12 flex items-center text-sm text-ai-dark-gray">
               <div className="flex -space-x-2 mr-4">
@@ -39,6 +44,7 @@ const Hero = () => {
               <p>Join <span className="font-semibold text-ai-navy">2,500+</span> students already learning</p>
             </div>
           </div>
+          
           <div className="relative">
             <div className="p-4 bg-white shadow-lg rounded-lg animate-float">
               <div className="aspect-[4/3] bg-ai-gray rounded-md flex items-center justify-center">
